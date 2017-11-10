@@ -1,6 +1,17 @@
-hotel
-{ name: 'Biltmore',
+var hotel = {
+  name: 'Biltmore',
   rooms: 500,
   roomsBooked: 150,
   roomService: true,
-  pool: false }
+  pool: false,
+
+  roomsAvail: function() {
+    return this.rooms - this.roomsBooked;
+  }
+};
+
+function hotelInfo() {
+  document.getElementById("name").innerHTML = hotel.name;
+  document.getElementById("rooms").innerHTML = hotel.rooms;
+  document.getElementById("roomsAvail").innerHTML = hotel.roomsAvail();
+}
